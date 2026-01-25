@@ -1,0 +1,197 @@
+.saved-games-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.saved-games-modal {
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2a2a3e;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.close-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: #2a2a3e;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: #3a3a4e;
+    color: var(--neon-pink);
+}
+
+.modal-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.no-games {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.no-games-icon {
+    font-size: 60px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.no-games p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.saved-game-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background: #1a1a2e;
+    border-radius: 16px;
+    border: 1px solid #2a2a3e;
+    transition: all 0.3s ease;
+}
+
+.saved-game-item:hover {
+    border-color: var(--neon-purple);
+}
+
+.game-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.game-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.game-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.meta-icon {
+    font-size: 0.9rem;
+}
+
+.team-names {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.team-tag {
+    padding: 4px 12px;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--neon-purple);
+}
+
+.game-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.load-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+}
+
+.delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: rgba(239, 68, 68, 0.3);
+}
+
+.delete-btn.confirm {
+    background: #ef4444;
+    color: white;
+    font-weight: 600;
+}
+
+@media (max-width: 500px) {
+    .saved-game-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .game-actions {
+        flex-direction: row;
+    }
+
+    .load-btn,
+    .delete-btn {
+        flex: 1;
+    }
+}

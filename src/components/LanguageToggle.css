@@ -1,0 +1,53 @@
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: rgba(20, 20, 31, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 1px solid #2a2a3e;
+}
+
+.rtl .language-toggle {
+    right: auto;
+    left: 20px;
+}
+
+.lang-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.lang-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-btn {
+    padding: 6px 14px;
+    border: 1px solid #2a2a3e;
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    border-color: var(--neon-purple);
+    color: var(--text-primary);
+}
+
+.lang-btn.active {
+    background: var(--gradient-purple);
+    border-color: var(--neon-purple);
+    color: white;
+}

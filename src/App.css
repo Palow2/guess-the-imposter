@@ -1,0 +1,22 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at top left, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+    var(--bg-dark);
+}
+
+.app.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.app.rtl .btn-arrow {
+  transform: scaleX(-1);
+}
+
+.app.rtl .btn:hover .btn-arrow {
+  transform: scaleX(-1) translateX(-5px);
+}

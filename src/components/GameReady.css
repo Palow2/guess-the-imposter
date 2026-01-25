@@ -1,0 +1,186 @@
+.game-ready {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.ready-container {
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 550px;
+    width: 100%;
+    border: 1px solid #2a2a3e;
+}
+
+.ready-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.ready-icon {
+    font-size: 60px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.ready-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ready-header p {
+    color: var(--text-secondary);
+}
+
+.setup-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.summary-section h3 {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.teams-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #1a1a2e;
+    border-radius: 12px;
+    border-left: 4px solid;
+}
+
+.rtl .team-item {
+    border-left: none;
+    border-right: 4px solid;
+}
+
+.team-name {
+    font-weight: 600;
+}
+
+.team-cards {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    background: #2a2a3e;
+    border-radius: 20px;
+}
+
+.cards-summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(34, 211, 238, 0.1));
+    border-radius: 16px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.cards-count {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--neon-purple);
+    line-height: 1;
+}
+
+.cards-label {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.action-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.save-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.save-name-input {
+    flex: 1;
+}
+
+.confirm-save-btn {
+    padding: 14px 24px;
+    white-space: nowrap;
+}
+
+.cancel-btn {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 12px;
+    background: #2a2a3e;
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel-btn:hover {
+    background: #3a3a4e;
+    color: var(--text-primary);
+}
+
+.start-btn {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-icon {
+    font-size: 1.4rem;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: var(--text-primary);
+}
