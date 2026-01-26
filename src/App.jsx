@@ -165,6 +165,10 @@ function App() {
       {gamePhase === 'gameOver' && (
         <EndScreen teams={teams} onRestart={restartGame} t={t} />
       )}
+
+      <div className="credit-footer">
+        Game made by Jasser Mdanat
+      </div>
     </div>
   )
 }

@@ -20,3 +20,16 @@
 .app.rtl .btn:hover .btn-arrow {
   transform: scaleX(-1) translateX(-5px);
 }
+
+.credit-footer {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.app.rtl .credit-footer {
+  direction: ltr;
+}
