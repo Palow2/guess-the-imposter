@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import './CardCreation.css'
 
-function CardCreation({ team, teamIndex, totalTeams, onSubmit, t }) {
+function CardCreation({ onSubmit, t }) {
     const [cards, setCards] = useState([])
     const [currentCard, setCurrentCard] = useState({
         playerName: '',
@@ -100,13 +100,8 @@ function CardCreation({ team, teamIndex, totalTeams, onSubmit, t }) {
         <div className="card-creation">
             <div className="creation-container animate-slideIn">
                 <div className="creation-header">
-                    <div className="team-badge" style={{
-                        background: `hsl(${(teamIndex * 60) + 270}, 80%, 50%)`
-                    }}>
-                        {team.name}
-                    </div>
                     <h2>{t.createCards}</h2>
-                    <p>{t.teamCreateCardsDesc} ({teamIndex + 1}/{totalTeams})</p>
+                    <p>{t.teamCardHelpText}</p>
                 </div>
 
                 <div className="card-form">
@@ -227,11 +222,7 @@ function CardCreation({ team, teamIndex, totalTeams, onSubmit, t }) {
                     onClick={handleSubmit}
                     disabled={cards.length < 1}
                 >
-                    {teamIndex < totalTeams - 1 ? (
-                        <>{t.nextTeam} →</>
-                    ) : (
-                        <>{t.startGameBtn}</>
-                    )}
+                    {t.startGameBtn}
                 </button>
 
                 <p className="help-text">

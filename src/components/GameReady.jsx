@@ -37,9 +37,6 @@ function GameReady({ teams, cards, onStartGame, onBack, t }) {
                                     borderColor: `hsl(${(i * 60) + 270}, 80%, 50%)`
                                 }}>
                                     <span className="team-name">{team.name}</span>
-                                    <span className="team-cards">
-                                        {cards.filter(c => c.ownerTeamIndex === i).length} {t.cardsLabel}
-                                    </span>
                                 </div>
                             ))}
                         </div>

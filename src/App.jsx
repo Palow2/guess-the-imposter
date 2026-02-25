@@ -16,9 +16,9 @@ function App() {
   const [cards, setCards] = useState([])
   const [currentTeamIndex, setCurrentTeamIndex] = useState(0)
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
-  const [cardCreationTeamIndex, setCardCreationTeamIndex] = useState(0)
   const [language, setLanguage] = useState('en')
   const [showSavedGames, setShowSavedGames] = useState(false)
+  const [usedCardIndices, setUsedCardIndices] = useState(new Set())
 
   const t = useTranslation(language)
   const isRTL = language === 'ar'
@@ -45,27 +45,13 @@ function App() {
       score: 0
     }))
     setTeams(newTeams)
-    setCardCreationTeamIndex(0)
     setCards([])
     setGamePhase('cardCreation')
   }
 
   const addCards = (newCards) => {
-    const cardsWithOwner = newCards.map(card => ({
-      ...card,
-      ownerTeam: teams[cardCreationTeamIndex].name,
-      ownerTeamIndex: cardCreationTeamIndex
-    }))
-
-    const allCards = [...cards, ...cardsWithOwner]
-    setCards(allCards)
-
-    if (cardCreationTeamIndex < teams.length - 1) {
-      setCardCreationTeamIndex(prev => prev + 1)
-    } else {
-      // Go to GameReady screen where they can save or start playing
-      setGamePhase('gameReady')
-    }
+    setCards(newCards)
+    setGamePhase('gameReady')
   }
 
   const startPlaying = () => {
@@ -74,6 +60,7 @@ function App() {
     setCards(shuffled)
     setCurrentTeamIndex(0)
     setCurrentCardIndex(0)
+    setUsedCardIndices(new Set())
     setGamePhase('playing')
   }
 
@@ -102,7 +89,7 @@ function App() {
     setCards([])
     setCurrentTeamIndex(0)
     setCurrentCardIndex(0)
-    setCardCreationTeamIndex(0)
+    setUsedCardIndices(new Set())
   }
 
   return (
@@ -131,9 +118,6 @@ function App() {
 
       {gamePhase === 'cardCreation' && (
         <CardCreation
-          team={teams[cardCreationTeamIndex]}
-          teamIndex={cardCreationTeamIndex}
-          totalTeams={teams.length}
           onSubmit={addCards}
           t={t}
         />

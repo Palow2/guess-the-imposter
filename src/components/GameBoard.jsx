@@ -111,14 +111,6 @@ function GameBoard({ teams, currentTeam, currentTeamIndex, currentCard, cardNumb
                             <h2>{t.readyToPlay}</h2>
                             <p>{t.readyDesc1}</p>
                             <p>{t.readyDesc2}</p>
-                            <div className="card-owner-info">
-                                <span className="owner-label">{t.cardOwnedBy}:</span>
-                                <span className="owner-team" style={{
-                                    background: `hsl(${(currentCard.ownerTeamIndex * 60) + 270}, 80%, 50%)`
-                                }}>
-                                    {currentCard.ownerTeam}
-                                </span>
-                            </div>
                             <button className="btn btn-primary start-round-btn" onClick={startRound}>
                                 {t.startRound}
                             </button>
@@ -172,11 +164,6 @@ function GameBoard({ teams, currentTeam, currentTeamIndex, currentCard, cardNumb
                                 <div className="owner-panel-header">
                                     <span className="owner-panel-icon">🔒</span>
                                     <span className="owner-panel-title">{t.ownerPanelTitle}</span>
-                                    <span className="owner-team-badge" style={{
-                                        background: `hsl(${(currentCard.ownerTeamIndex * 60) + 270}, 80%, 50%)`
-                                    }}>
-                                        {currentCard.ownerTeam}
-                                    </span>
                                 </div>
 
                                 <p className="owner-warning">⚠️ {t.ownerWarning}</p>
